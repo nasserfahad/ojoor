@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بأجور – حلول الأعمال في السعودية</title>
+  <meta name="description" content="تواصل مع أجور للحصول على خدمات تأسيس الشركات والموارد البشرية والرواتب والاستشارات القانونية في السعودية. نحن في خدمتك.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 { font-weight: bold; color: var(--primary); margin-top: 0; }
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+
+    p { margin-top: 0; margin-bottom: 1rem; color: #555; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .navbar nav { display: flex; gap: 2rem; }
+    .navbar nav a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active { color: var(--accent); font-weight: bold; }
+
+    /* --- Hero Section --- */
+    .hero { text-align: center; padding: 4rem 0; background-color: var(--secondary-bg); }
+    .hero p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; }
+
+    /* --- Contact Section --- */
+    .contact-section { padding-top: 5rem; }
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+    
+    /* --- Contact Form --- */
+    .contact-form {
+        background-color: var(--secondary-bg);
+        padding: 2.5rem;
+        border-radius: 12px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: var(--primary);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: var(--font-base);
+        font-size: 1rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(27, 171, 117, 0.2);
+    }
+    .submit-button {
+        width: 100%;
+        padding: 15px;
+        background-color: var(--accent);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .submit-button:hover { background-color: #179b68; transform: translateY(-2px); }
+
+    /* --- Contact Details --- */
+    .contact-details .info-block {
+        margin-bottom: 2rem;
+        padding-right: 2rem;
+        border-right: 3px solid var(--accent);
+    }
+     .contact-details .info-block h4 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--primary);
+    }
+     .contact-details .info-block p {
+        margin: 0;
+        line-height: 1.7;
+    }
+    .contact-details a {
+        color: #555;
+        text-decoration: none;
+    }
+    .contact-details a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer { background-color: #2c3e50; color: var(--white); padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col a, .footer-col p { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; color: rgba(255, 255, 255, 0.6); }
+    
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 900px) {
+        .contact-layout { grid-template-columns: 1fr; }
+        .contact-details { margin-top: 3rem; }
+    }
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3rem 0; }
+        .navbar nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index-ar.html" class="logo">أجور</a>
+        <nav>
+          <a href="index-ar.html">الرئيسية</a>
+          <a href="about-ojoor-saudi-ar.html">من نحن</a>
+          <a href="ojoor-business-services-saudi-ar.html">الخدمات</a>
+          <a href="blog-ar.html">المقالات</a>
+          <a href="contact-ar.html" class="active">اتصل بنا</a>
+        </nav>
+        <div>
+          <a href="contact.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="English">English</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>تواصل معنا</h1>
+        <p>لديك سؤال أو ترغب في بدء مشروع؟ نحن هنا لمساعدتك. املأ النموذج أدناه أو استخدم معلومات الاتصال المباشرة.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h3>أرسل لنا رسالة</h3>
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="name">الاسم الكامل*</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">البريد الإلكتروني*</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="service">الخدمة المطلوبة</label>
+                <select id="service" name="service">
+                  <option value="">-- اختر خدمة --</option>
+                  <option value="company-establishment">تأسيس الشركات</option>
+                  <option value="payroll">إدارة الإقامة والرواتب</option>
+                  <option value="recruitment">التوظيف</option>
+                  <option value="accounting">المحاسبة</option>
+                  <option value="legal">الحلول القانونية</option>
+                  <option value="other">استفسار عام</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">كيف يمكننا مساعدتك؟*</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+              </div>
+              <button type="submit" class="submit-button">أرسل الرسالة</button>
+            </form>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="contact-details">
+            <h3>معلومات الاتصال المباشر</h3>
+            <div class="info-block">
+                <h4>البريد الإلكتروني</h4>
+                <p><a href="mailto:info@ojoor.sa">info@ojoor.sa</a></p>
+            </div>
+            <div class="info-block">
+                <h4>الهاتف</h4>
+                <p><a href="tel:+966533332764">‎+966 5 3333 2764</a></p>
+            </div>
+            <div class="info-block">
+                <h4>العنوان</h4>
+                <p>مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض، المملكة العربية السعودية</p>
+            </div>
+             <div class="info-block">
+                <h4>ساعات العمل</h4>
+                <p>الأحد – الخميس: 9:00 صباحاً – 5:00 مساءً</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>نبذة عنا</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi-ar.html">نبذة عن الشركة</a></li>
+            <li><a href="ojoor-leadership-team-ar.html">فريق القيادة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li><a href="management-consulting-saudi-ar.html">تأسيس الشركات</a></li>
+            <li><a href="human-resources-solutions-saudi-ar.html">إدارة الإقامة والرواتب</a></li>
+            <li><a href="digital-transformation-saudi-ar.html">التوظيف</a></li>
+            <li><a href="digital-marketing-saudi-ar.html">المحاسبة</a></li>
+            <li><a href="legal-solutions-saudi-ar.html">الحلول القانونية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل</h4>
+          <p>البريد الإلكتروني: <a href="mailto:info@ojoor.sa">info@ojoor.sa</a></p>
+          <p>الهاتف: <a href="tel:+966533332764">‎+966 5 3333 2764</a></p>
+          <p>العنوان: مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:center; color:#fff;">
+        <p style="color:#fff;">© 2025 أجور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

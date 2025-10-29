@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Center – Ojoor Articles & Guides</title>
+  <meta name="description" content="Read expert articles on Saudi regulations, HR, finance, and business tips from Ojoor.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --gold: #d4a448;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 { font-weight: bold; color: var(--primary); margin-top: 0; }
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.2rem; margin-bottom: 0.75rem; line-height: 1.5; }
+
+    p { margin-top: 0; margin-bottom: 1rem; color: #555; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .navbar nav { display: flex; gap: 2rem; }
+    .navbar nav a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active { color: var(--accent); font-weight: bold; }
+
+    /* --- Hero Section --- */
+    .hero { text-align: center; padding: 4rem 0; background-color: var(--secondary-bg); }
+    .hero p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; }
+    
+    /* --- Blog Grid & Article Cards --- */
+    .articles-section { padding-top: 5rem; }
+    .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .article-card {
+        background-color: var(--white);
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    }
+    .article-card-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+    .article-card-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .article-card-category {
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+    .article-card-content h3 {
+        margin-bottom: auto;
+    }
+     .article-card-content p {
+        flex-grow: 1;
+        font-size: 0.95rem;
+    }
+    .read-more-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+    .read-more-link:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    /* --- Categories Section --- */
+    .categories-section {
+        background-color: var(--secondary-bg);
+    }
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    .category-card {
+        background-color: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+        text-decoration: none;
+    }
+     .category-card h3 {
+        font-size: 1.1rem;
+        color: var(--primary);
+         margin: 0;
+    }
+    .category-card:hover {
+        background-color: var(--primary);
+    }
+    .category-card:hover h3 {
+        color: var(--white);
+    }
+
+    /* --- Newsletter/CTA Section --- */
+    .newsletter-cta {
+        background-color: var(--primary);
+        color: var(--white);
+        text-align: center;
+    }
+    .newsletter-cta h2 { color: var(--white); }
+    .newsletter-cta p { color: rgba(255, 255, 255, 0.9); margin: 0 auto 2rem auto; }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover { background-color: #179b68; transform: translateY(-2px); }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer { background-color: #2c3e50; color: var(--white); padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col a, .footer-col p { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; color: rgba(255, 255, 255, 0.6); }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3.5rem 0; }
+        .navbar nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo">OJOOR</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about-ojoor-saudi.html">About Us</a>
+          <a href="ojoor-business-services-saudi.html">Services</a>
+          <a href="blog.html" class="active">Articles</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+        <div>
+          <a href="blog-ar.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="العربية">العربية</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Knowledge Center</h1>
+        <p>Explore articles and guides from our experts in law, HR, and accounting to support your business growth.</p>
+      </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="articles-section">
+      <div class="container">
+        <h2>Latest Articles</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-card-image" style="background-image: url('https://placehold.co/600x400/00514d/ffffff?text=Image');"></div>
+            <div class="article-card-content">
+              <span class="article-card-category">Regulatory Updates</span>
+              <h3>New Licensing Rules: A Regulatory Update</h3>
+              <p>A look at the recent changes in commercial licensing regulations in Saudi Arabia and their impact on your business.</p>
+              <a href="#" class="read-more-link">Read Article</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-image" style="background-image: url('https://placehold.co/600x400/1bab75/ffffff?text=Image');"></div>
+            <div class="article-card-content">
+              <span class="article-card-category">Human Resources</span>
+              <h3>Building a Strong Employer Brand</h3>
+              <p>Practical tips for marketing your company as a preferred employer to attract top talent in the Kingdom.</p>
+              <a href="#" class="read-more-link">Read Article</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-card-image" style="background-image: url('https://placehold.co/600x400/d4a448/ffffff?text=Image');"></div>
+            <div class="article-card-content">
+              <span class="article-card-category">Tax & Finance</span>
+              <h3>Preparing for a VAT Audit</h3>
+              <p>Guidelines to ensure your VAT returns are accurate, audit-ready, and compliant to avoid any issues.</p>
+              <a href="#" class="read-more-link">Read Article</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <h2>Browse by Category</h2>
+            <div class="categories-grid">
+                <a href="#" class="category-card"><h3>Regulatory Updates</h3></a>
+                <a href="#" class="category-card"><h3>Human Resources</h3></a>
+                <a href="#" class="category-card"><h3>Case Studies</h3></a>
+                <a href="#" class="category-card"><h3>Tax & Finance</h3></a>
+                <a href="#" class="category-card"><h3>Business Tips</h3></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta">
+      <div class="container">
+        <h2>Stay Up-to-Date</h2>
+        <p>Subscribe to our newsletter to get the latest articles and insights directly in your inbox.</p>
+        <a href="contact.html" class="cta-button">Subscribe Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi.html">Our Company</a></li>
+            <li><a href="ojoor-leadership-team.html">Leadership Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="management-consulting-saudi.html">Management Consulting</a></li>
+            <li><a href="human-resources-solutions-saudi.html">HR Solutions</a></li>
+            <li><a href="digital-transformation-saudi.html">Digital Transformation</a></li>
+            <li><a href="digital-marketing-saudi.html">Digital Marketing</a></li>
+            <li><a href="legal-solutions-saudi.html">Legal Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Email: info@ojoor.sa</p>
+          <p>Phone: +966 5 3333 2764</p>
+          <p>Address: Building S4, ROSHN Business Front, Airport Road, Riyadh</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align: center; color: #fff;">
+        <p style="margin: 0; color: #fff;">© 2025 Ojoor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

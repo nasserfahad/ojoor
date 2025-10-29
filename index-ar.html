@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أجور – حلول أعمال متكاملة في المملكة العربية السعودية</title>
+  <meta name="description" content="أجور تقدم خدمات تأسيس الشركات، وتعهدات الموارد البشرية، وإدارة الرواتب، والحلول القانونية في السعودية. تحدث مع خبرائنا اليوم.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --gold: #d4a448;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 { font-weight: bold; color: var(--primary); margin-top: 0; }
+    h1 { font-size: 3rem; margin-bottom: 1.5rem; line-height: 1.3; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+    p { margin-top: 0; margin-bottom: 1rem; color: #555; max-width: 650px; }
+    
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .navbar nav { display: flex; gap: 2rem; }
+    .navbar nav a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active { color: var(--accent); font-weight: bold; }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 14px 32px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 0 0.5rem;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover { background-color: #179b68; transform: translateY(-2px); }
+    .cta-button.secondary {
+        background-color: transparent;
+        color: var(--primary);
+        box-shadow: inset 0 0 0 2px var(--primary);
+    }
+    .cta-button.secondary:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+
+    /* --- Services Section --- */
+    .services-section { background-color: var(--secondary-bg); }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .service-card {
+        background-color: var(--white);
+        padding: 2rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        text-align: right;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.07); }
+    .service-card .icon { height: 40px; width: 40px; margin-bottom: 1rem; }
+    .service-card h3 { color: var(--primary); }
+    .service-card p { font-size: 0.95rem; line-height: 1.7; color: #666; flex-grow: 1;}
+    .service-card .read-more-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+    .service-card .read-more-link:hover { color: var(--accent); text-decoration: underline; }
+
+    /* --- Why Us Section --- */
+    .why-us-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    .why-us-image {
+        height: 100%;
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+    }
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .feature-item .icon {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        margin-top: 5px;
+        color: var(--accent);
+    }
+    .feature-item h4 { margin: 0 0 0.5rem 0; font-size: 1.15rem; color: var(--primary); }
+    .feature-item p { margin: 0; font-size: 0.95rem; }
+
+    /* --- Testimonials Section --- */
+    .testimonials-section { background-color: var(--secondary-bg); }
+    .testimonial-card {
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+        text-align: center;
+    }
+    .testimonial-card p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+    .testimonial-author { font-weight: bold; color: var(--primary); }
+    .testimonial-role { font-size: 0.9rem; color: #777; }
+
+    /* --- Final CTA Section --- */
+    .final-cta { background-color: var(--primary); color: var(--white); text-align: center; }
+    .final-cta h2 { color: var(--white); }
+    .final-cta p { color: rgba(255, 255, 255, 0.9); margin: 0 auto 2rem auto; }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer { background-color: #2c3e50; color: var(--white); padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col a, .footer-col p { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; color: rgba(255, 255, 255, 0.6); }
+    
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 900px) {
+        .why-us-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3rem 0; }
+        .navbar nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index-ar.html" class="logo">أجور</a>
+        <nav>
+          <a href="index-ar.html" class="active">الرئيسية</a>
+          <a href="about-ojoor-saudi-ar.html">من نحن</a>
+          <a href="ojoor-business-services-saudi-ar.html">الخدمات</a>
+          <a href="blog-ar.html">المقالات</a>
+          <a href="contact-ar.html">اتصل بنا</a>
+        </nav>
+        <div>
+          <a href="index.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="English">English</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>شريككم الاستراتيجي للنمو في المملكة العربية السعودية</h1>
+        <p>نقدم حلولاً متكاملة ومبتكرة في الاستشارات، الموارد البشرية، التحول الرقمي، والتسويق لتمكين أعمالكم من تحقيق النجاح المستدام.</p>
+        <div>
+          <a href="contact-ar.html" class="cta-button">اطلب استشارة مجانية</a>
+          <a href="#services" class="cta-button secondary">اكتشف خدماتنا</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2>حلول متكاملة لأعمالك</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>الاستشارات الإدارية</h3>
+            <p>نقدم رؤى استراتيجية لتحليل الهيكل المؤسسي ووضع خطط بعيدة المدى لتمكين أعمالك.</p>
+            <a href="management-consulting-saudi-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+          <div class="service-card">
+            <h3>حلول الموارد البشرية</h3>
+            <p>نساعدك في تخطيط القوى العاملة، استقطاب المواهب، وتطوير برامج القيادة الفعالة.</p>
+            <a href="human-resources-solutions-saudi-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+          <div class="service-card">
+            <h3>التحول الرقمي</h3>
+            <p>نبني لك بنية رقمية حديثة وندمج الذكاء الاصطناعي لتحسين الأداء التشغيلي.</p>
+            <a href="digital-transformation-saudi-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+          <div class="service-card">
+            <h3>التسويق والإعلام الرقمي</h3>
+            <p>نصمم استراتيجيات رقمية، وننشئ المحتوى، وندير الحملات لتوسيع نطاق حضورك.</p>
+            <a href="digital-marketing-saudi-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+          <div class="service-card">
+            <h3>إدارة المشاريع</h3>
+            <p>نضمن إنجاز مشاريعك من دراسة الجدوى حتى التنفيذ والمتابعة بكفاءة عالية.</p>
+            <a href="project_management-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+          <div class="service-card">
+            <h3>الحلول القانونية</h3>
+            <p>نوفر استشارات قانونية، صياغة عقود، ونضمن الالتزام بالتشريعات المحلية والدولية.</p>
+            <a href="legal-solutions-saudi-ar.html" class="read-more-link">اعرف المزيد</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us-section">
+      <div class="container">
+        <div class="why-us-layout">
+          <div class="why-us-text">
+            <h2>لماذا تختار أجور؟</h2>
+            <div class="feature-item">
+              <div class="icon-container"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 014.288 0M12 15a3 3 0 100-6 3 3 0 000 6z" /></svg></div>
+              <div>
+                <h4>فريق من الخبراء</h4>
+                <p>يضم فريقنا متخصصين بخبرات محلية وعالمية لتقديم أفضل الحلول.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="icon-container"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div>
+              <div>
+                <h4>حلول متكاملة ومخصصة</h4>
+                <p>نقدم باقة خدمات شاملة ومصممة خصيصاً لتلبية احتياجات عملك الفريدة.</p>
+              </div>
+            </div>
+             <div class="feature-item">
+              <div class="icon-container"><svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+              <div>
+                <h4>نتائج قابلة للقياس</h4>
+                <p>نركز على تحديد مؤشرات الأداء ومتابعتها لضمان تحقيق تأثير ملموس على أعمالك.</p>
+              </div>
+            </div>
+          </div>
+          <div class="why-us-image" style="background-image: url('https://placehold.co/600x700/00514d/ffffff?text=صورة');"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2>ماذا يقول عملاؤنا</h2>
+        <div class="services-grid">
+          <div class="testimonial-card">
+            <p>“بفضل خدمات أجور، نفذنا برنامج تحول رقمي متكامل وأصبح العمل لدينا أكثر كفاءة وسلاسة.”</p>
+            <div class="testimonial-author">محمد الرويلي</div>
+            <div class="testimonial-role">مدير العمليات، شركة تقنية</div>
+          </div>
+          <div class="testimonial-card">
+            <p>“ساعدنا فريق أجور في بناء نظام متكامل لإدارة الموارد البشرية وتطوير قدراتنا القيادية بشكل ملحوظ.”</p>
+            <div class="testimonial-author">سارة القحطاني</div>
+            <div class="testimonial-role">مديرة الموارد البشرية، شركة صناعية</div>
+          </div>
+          <div class="testimonial-card">
+            <p>“بدعم أجور، تمكنا من إتمام مشروع استراتيجي معقد قبل الموعد المحدد وبجودة فاقت توقعاتنا.”</p>
+            <div class="testimonial-author">خالد العنزي</div>
+            <div class="testimonial-role">مدير مشروع، قطاع حكومي</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>هل أنت جاهز لبدء رحلة النجاح؟</h2>
+        <p>اتصل بنا اليوم لمناقشة احتياجاتك وكيف يمكننا مساعدتك في تحقيق أهدافك.</p>
+        <a href="contact-ar.html" class="cta-button">تواصل معنا الآن</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>نبذة عنا</h4>
+          <ul>
+            <li><a href="about-ar.html">نبذة عن الشركة</a></li>
+            <li><a href="ojoor-leadership-team-ar.html">فريق القيادة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li><a href="management-consulting-saudi-ar.html">الاستشارات الإدارية</a></li>
+            <li><a href="human-resources-solutions-saudi-ar.html">حلول الموارد البشرية</a></li>
+            <li><a href="digital-transformation-saudi-ar.html">التحول الرقمي</a></li>
+            <li><a href="digital-marketing-saudi-ar.html">التسويق والإعلام الرقمي</a></li>
+            <li><a href="project_management-ar.html">إدارة المشاريع</a></li>
+            <li><a href="legal-solutions-saudi-ar.html">الحلول القانونية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل</h4>
+          <p>البريد الإلكتروني: <a href="mailto:info@ojoor.sa">info@ojoor.sa</a></p>
+          <p>الهاتف: <a href="tel:+966533332764">‎+966 5 3333 2764</a></p>
+          <p>العنوان: مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:center; color:#fff;">
+        <p style="color:#fff;">© 2025 أجور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

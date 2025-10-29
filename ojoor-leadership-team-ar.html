@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فريق القيادة في أجور – تعرف على خبرائنا</title>
+  <meta name="description" content="تعرف على الفريق القيادي لأجور وخبراتهم الطويلة في تقديم حلول الأعمال في السعودية.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3, h4 { font-weight: bold; color: var(--primary); margin-top: 0; }
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+    p { margin-top: 0; margin-bottom: 1rem; color: #555; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .navbar nav { display: flex; gap: 2rem; }
+    .navbar nav a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active { color: var(--accent); font-weight: bold; }
+
+    /* --- Hero Section --- */
+    .hero { text-align: center; padding: 4rem 0; background-color: var(--secondary-bg); }
+    .hero p { font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; }
+
+    /* --- Leadership Grid --- */
+    .leadership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+    }
+    .leader-profile-card {
+        background-color: var(--white);
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        text-align: center;
+        padding: 2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    .leader-profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    }
+    .leader-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem auto;
+        background-size: cover;
+        background-position: center;
+        border: 4px solid var(--accent);
+        flex-shrink: 0;
+    }
+    .leader-profile-card h4 {
+        margin-bottom: 0.25rem;
+    }
+    .leader-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .leader-bio {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        flex-grow: 1;
+    }
+
+    /* --- Final CTA Section (Consistent) --- */
+    .final-cta { background-color: var(--primary); color: var(--white); text-align: center; }
+    .final-cta h2 { color: var(--white); }
+    .final-cta p { color: rgba(255, 255, 255, 0.9); margin: 0 auto 2rem auto; }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover { background-color: #179b68; transform: translateY(-2px); }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer { background-color: #2c3e50; color: var(--white); padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col a, .footer-col p { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; color: rgba(255, 255, 255, 0.6); }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3rem 0; }
+        .navbar nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index-ar.html" class="logo">أجور</a>
+        <nav>
+          <a href="index-ar.html">الرئيسية</a>
+          <a href="about-ojoor-saudi-ar.html" class="active">من نحن</a>
+          <a href="ojoor-business-services-saudi-ar.html">الخدمات</a>
+          <a href="blog-ar.html">المقالات</a>
+          <a href="contact-ar.html">اتصل بنا</a>
+        </nav>
+        <div>
+          <a href="ojoor-leadership-team.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="English">English</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>تعرف على فريقنا القيادي</h1>
+        <p>تكمن قوتنا في فريق من المهنيين المتمرسين الذين يكرسون جهودهم لدفع رؤيتنا إلى الأمام وضمان نجاح عملائنا.</p>
+      </div>
+    </section>
+
+    <!-- Leaders Section -->
+    <section class="leaders-section">
+      <div class="container">
+        <div class="leadership-grid">
+          
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/GhzJWQ7s/Whats-App-Image-2025-09-15-at-16-43-00.jpg');"></div>
+            <h4>عبدالرحمن العقيل</h4>
+            <div class="leader-title">الرئيس التنفيذي</div>
+            <p class="leader-bio">يشرف على التوجيه الاستراتيجي للشركة ويضمن تحقيق رؤيتها وأهدافها طويلة المدى، مع التركيز على بناء علاقات قوية مع العملاء والشركاء.</p>
+          </div>
+
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/D00y87hK/Whats-App-Image-2025-09-15-at-16-42-22.jpg');"></div>
+            <h4>يوسف الجبرتي</h4>
+            <div class="leader-title">مدير تطوير الأعمال</div>
+            <p class="leader-bio">يعمل على بناء شراكات استراتيجية جديدة وتوسيع قاعدة عملاء الشركة في مختلف القطاعات، مع التركيز على فرص النمو.</p>
+          </div>
+
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/zGZbPR5R/Whats-App-Image-2025-10-29-at-19-12-08.jpg');"></div>
+            <h4>د. محمد آل كليب</h4>
+            <div class="leader-title">قائد الابتكار</div>
+            <p class="leader-bio">يقود مبادرات الابتكار وتطوير الحلول الجديدة التي تلبي احتياجات السوق المتغيرة، ويعمل على دمج أحدث التقنيات في خدماتنا.</p>
+          </div>
+                  
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/zBmcy718/Whats-App-Image-2025-09-14-at-20-41-02.jpg');"></div>
+            <h4>أفنان الدبيان</h4>
+            <div class="leader-title">مدير فني</div>
+            <p class="leader-bio">تقود الرؤية الإبداعية للعلامة التجارية، وتشرف على تصميم المواد التسويقية والهوية البصرية لضمان تقديم صورة احترافية ومميزة.</p>
+          </div>
+
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/nr32GYNM/Whats-App-Image-2025-09-14-at-20-39-57.jpg');"></div>
+            <h4>ناصر فهد النخيلان</h4>
+            <div class="leader-title">مدير مشاريع</div>
+            <p class="leader-bio">يشرف على تنفيذ المشاريع اليومية وينسق بين الفرق لضمان سير العمل بكفاءة وتسليم المشاريع في الوقت المحدد.</p>
+          </div>
+
+          <div class="leader-profile-card">
+            <div class="leader-photo" style="background-image: url('https://i.postimg.cc/W44292DR/Whats-App-Image-2025-09-14-at-20-40-33.jpg');"></div>
+            <h4>محمد دخيل الله العنزي</h4>
+            <div class="leader-title">كاتب محتوى</div>
+            <p class="leader-bio">مسؤول عن صياغة رسالة الشركة وابتكار محتوى جذاب يعكس خبرتنا، من المقالات المتخصصة إلى المواد التسويقية.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>هل أنت مستعد للعمل مع فريق من الخبراء؟</h2>
+        <p>دعنا نضع خبرتنا في خدمتك. تواصل معنا اليوم لمناقشة كيف يمكننا دعم نجاح شركتك.</p>
+        <a href="contact-ar.html" class="cta-button">تواصل معنا الآن</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>نبذة عنا</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi-ar.html">نبذة عن الشركة</a></li>
+            <li><a href="ojoor-leadership-team-ar.html">فريق القيادة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li><a href="management-consulting-saudi-ar.html">تأسيس الشركات</a></li>
+            <li><a href="human-resources-solutions-saudi-ar.html">إدارة الإقامة والرواتب</a></li>
+            <li><a href="digital-transformation-saudi-ar.html">التوظيف</a></li>
+            <li><a href="digital-marketing-saudi-ar.html">المحاسبة</a></li>
+            <li><a href="legal-solutions-saudi-ar.html">الحلول القانونية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل</h4>
+          <p>البريد الإلكتروني: <a href="mailto:info@ojoor.sa">info@ojoor.sa</a></p>
+          <p>الهاتف: <a href="tel:+966533332764">‎+966 5 3333 2764</a></p>
+          <p>العنوان: مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:center; color:#fff;">
+        <p style="color:#fff;">© 2025 أجور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

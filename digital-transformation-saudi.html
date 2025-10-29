@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Transformation & Smart Technologies – Ojoor KSA</title>
+  <meta name="description" content="Explore Digital Transformation services from Ojoor, including digital infrastructure development, AI integration, data analysis, and automation to optimize your business.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 { font-weight: bold; color: var(--primary); margin-top: 0; }
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+
+    p { margin-top: 0; margin-bottom: 1rem; max-width: 750px; color: #555;}
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+    .navbar { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    .navbar nav { display: flex; gap: 2rem; }
+    .navbar nav a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .navbar nav a:hover { color: var(--accent); }
+    .navbar nav a.active { color: var(--accent); font-weight: bold; }
+
+    /* --- Service Hero Section --- */
+    .service-hero-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 4rem 0;
+    }
+    .hero-text h1 { margin-bottom: 1.5rem; }
+    .hero-text .subtitle { font-size: 1.2rem; color: #555; line-height: 1.7; }
+    .hero-image {
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover { background-color: #179b68; transform: translateY(-2px); }
+
+    /* --- Service Areas Section --- */
+    .service-areas { background-color: var(--secondary-bg); }
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    .info-card {
+        background-color: var(--white);
+        padding: 2.5rem 2rem 2.5rem 5rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.07); }
+    .info-card .card-number {
+        font-size: 4rem; font-weight: bold; color: var(--accent);
+        opacity: 0.2; position: absolute; top: 0.5rem; left: 1.5rem;
+    }
+    .info-card h3, .info-card p { position: relative; }
+    
+    /* --- Process Section --- */
+    .process-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .process-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        position: relative;
+    }
+    .process-timeline::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 18px;
+        bottom: 20px;
+        width: 4px;
+        background-color: var(--secondary-bg);
+        border-radius: 2px;
+    }
+    .process-step {
+        position: relative;
+        padding-left: 60px;
+    }
+    .process-step::before {
+        content: attr(data-step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        color: var(--white);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid var(--white);
+    }
+    .process-step h3 { font-size: 1.2rem; }
+
+    /* --- Final CTA Section (Consistent) --- */
+    .final-cta { background-color: var(--primary); color: var(--white); text-align: center; }
+    .final-cta h2 { color: var(--white); }
+    .final-cta p { color: rgba(255, 255, 255, 0.9); margin: 0 auto 2rem auto; }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer { background-color: #2c3e50; color: var(--white); padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .footer-col h4 { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.75rem; }
+    .footer-col a, .footer-col p { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+    .footer-col a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; color: rgba(255, 255, 255, 0.6); }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 900px) {
+        .service-hero-split { 
+            grid-template-columns: 1fr; 
+            text-align: center;
+        }
+        .hero-image { grid-row: 1; height: 300px; }
+        .hero-text .subtitle { margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 2.4rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.2rem; }
+        section { padding: 3.5rem 0; }
+        .navbar nav { display: none; }
+        .info-card { padding: 2rem; }
+        .info-card .card-number { font-size: 3rem; left: 1rem; }
+        .process-step { padding-left: 55px; }
+        .process-timeline::before { left: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo">OJOOR</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about-ojoor-saudi.html">About Us</a>
+          <a href="ojoor-business-services-saudi.html" class="active">Services</a>
+          <a href="blog.html">Articles</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+        <div>
+          <a href="digital-transformation-saudi-ar.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="العربية">العربية</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-split">
+                <div class="hero-text">
+                    <h1 style="line-height: 1;">Digital Transformation & Smart Technologies</h1>
+                    <p class="subtitle">We don't just adopt technology; we reimagine how your company operates. We help you build a robust digital infrastructure and integrate AI to achieve a quantum leap in efficiency and innovation.</p>
+                    <a href="contact.html" class="cta-button">Start Your Digital Journey</a>
+                </div>
+                <div class="hero-image" style="background-image: url('https://placehold.co/600x500/00514d/ffffff?text=Image');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Our Service Areas</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <div class="card-number">1</div>
+            <h3>Digital Strategy & Infrastructure</h3>
+            <p>We establish a clear digital vision and design a flexible, scalable tech infrastructure to support your business growth.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">2</div>
+            <h3>Artificial Intelligence & Automation</h3>
+            <p>We integrate AI solutions and Robotic Process Automation (RPA) to optimize processes and increase productivity.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">3</div>
+            <h3>Data Analytics & Insights</h3>
+            <p>We help you collect and analyze data to gain accurate insights that support better strategic decision-making.</p>
+          </div>
+           <div class="info-card">
+            <div class="card-number">4</div>
+            <h3>Digital Process Optimization</h3>
+            <p>We redesign and simplify your business processes using digital tools to enhance efficiency and quality.</p>
+          </div>
+           <div class="info-card">
+            <div class="card-number">5</div>
+            <h3>Adoption & Training</h3>
+            <p>We train your teams to use new technologies effectively, ensuring full adoption and benefit from the transformation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process-section">
+      <div class="container">
+        <h2>Our Digital Transformation Steps</h2>
+        <div class="process-timeline">
+            <div class="process-step" data-step="1">
+                <h3>Discovery & Assessment</h3>
+                <p>We start with a deep understanding of your current challenges and future goals to identify key digital opportunities.</p>
+            </div>
+            <div class="process-step" data-step="2">
+                <h3>Roadmap Development</h3>
+                <p>We create a detailed action plan that includes the platforms, processes, and timelines required for transformation.</p>
+            </div>
+            <div class="process-step" data-step="3">
+                <h3>Implementation & Execution</h3>
+                <p>We deploy the agreed-upon digital solutions and monitor progress to ensure alignment with the plan.</p>
+            </div>
+            <div class="process-step" data-step="4">
+                <h3>Enablement & Training</h3>
+                <p>We train users and provide the necessary support to foster the adoption of new tools and achieve the best results.</p>
+            </div>
+             <div class="process-step" data-step="5">
+                <h3>Continuous Improvement</h3>
+                <p>We monitor performance and continuously adjust solutions based on data to improve outcomes and adapt to new developments.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Ready to Build a Digital Future for Your Business?</h2>
+        <p>Contact us today to begin your digital transformation journey and achieve a sustainable competitive advantage.</p>
+        <a href="contact.html" class="cta-button">Start Transformation Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi.html">Our Company</a></li>
+            <li><a href="ojoor-leadership-team.html">Leadership Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="management-consulting-saudi.html">Management Consulting</a></li>
+            <li><a href="human-resources-solutions-saudi.html">HR Solutions</a></li>
+            <li><a href="digital-transformation-saudi.html">Digital Transformation</a></li>
+            <li><a href="digital-marketing-saudi.html">Digital Marketing</a></li>
+            <li><a href="project_management.html">Project Management</a></li>
+            <li><a href="legal-solutions-saudi.html">Legal Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:info@ojoor.sa">info@ojoor.sa</a></p>
+          <p>Phone: <a href="tel:+966533332764">+966 5 3333 2764</a></p>
+          <p>Address: Building S4, ROSHN Business Front, Airport Road, Riyadh</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align: center; color: #fff;">
+        <p style="margin: 0; color: #fff;">© 2025 Ojoor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

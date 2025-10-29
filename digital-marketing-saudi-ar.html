@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التسويق والإعلام الرقمي – أجور</title>
+  <meta name="description" content="طور علامتك التجارية وحقق نتائج من خلال استراتيجيات تسويق رقمي، إنشاء محتوى مميز، إدارة وسائل التواصل، تطوير الحملات الإعلانية وتحليل الأداء.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f9fa (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa;
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --gold: #d4a448;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--white);
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 {
+      font-weight: bold;
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; }
+    h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      max-width: 750px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* --- Header (Consistent) --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 0.5rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .navbar nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: var(--accent);
+    }
+    
+    /* --- Service Hero Section --- */
+    .service-hero {
+        text-align: center;
+        padding: 4rem 0;
+    }
+    .service-hero h1 {
+        color: var(--primary);
+    }
+    .service-hero .subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover {
+        background-color: #179b68;
+        transform: translateY(-2px);
+    }
+
+    /* --- Service Areas & Benefits Section --- */
+    .service-areas, .benefits {
+        background-color: var(--secondary-bg);
+    }
+    .benefits {
+        background-color: var(--white); /* Alternate background color */
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    .info-card {
+        background-color: var(--white);
+        padding: 2.5rem 5rem 2.5rem 2rem; /* Increased padding on the right for spacing */
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: right; /* Set text alignment for the card */
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    }
+    .info-card .card-number {
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--accent);
+        opacity: 0.2;
+        position: absolute;
+        top: 0.5rem;
+        right: 1.5rem; /* For RTL, right places it on the opposite side */
+    }
+    .info-card h3 {
+        position: relative; /* Keep text above the number */
+    }
+    .info-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #666;
+        position: relative;
+    }
+    
+    /* --- Final CTA Section (Consistent) --- */
+    .final-cta {
+        background-color: var(--primary);
+        color: var(--white);
+        text-align: center;
+    }
+    .final-cta h2 {
+        color: var(--white);
+    }
+    .final-cta p {
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 auto 2rem auto;
+    }
+
+    /* --- Footer (Consistent) --- */
+    .main-footer {
+        background-color: #2c3e50;
+        color: var(--white);
+        padding: 4rem 0 2rem 0;
+        font-size: 0.95rem;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    .footer-col h4 {
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-col ul li {
+        margin-bottom: 0.75rem;
+    }
+    .footer-col a, .footer-col p {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+    }
+    .footer-col a:hover {
+        color: var(--white);
+        text-decoration: underline;
+    }
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3rem 0; }
+        .navbar nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index-ar.html" class="logo">أجور</a>
+        <nav>
+          <a href="index-ar.html">الرئيسية</a>
+          <a href="about-ojoor-saudi-ar.html">من نحن</a>
+          <a href="ojoor-business-services-saudi-ar.html">الخدمات</a>
+          <a href="blog-ar.html">المقالات</a>
+          <a href="contact-ar.html">اتصل بنا</a>
+        </nav>
+        <div>
+          <a href="digital-marketing-saudi.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="English">English</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <h1>التسويق والإعلام الرقمي</h1>
+        <p class="subtitle">ساعد عملك على التميز في سوق مزدحم. نصوغ هوية علامتك، ننتج محتوى جذاباً، وندير حملات رقمية تصل إلى جمهورك وتحقق نتائج قابلة للقياس.</p>
+        <a href="contact-ar.html" class="cta-button">اطلب استشارة تسويقية</a>
+      </div>
+    </section>
+
+    <!-- Key Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>مجالات الخدمة</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <div class="card-number">١</div>
+            <h3>استراتيجية العلامة التجارية الرقمية</h3>
+            <p>صياغة رؤية ورسالة واستراتيجية رقمية تتوافق مع أهدافك وجمهورك.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٢</div>
+            <h3>إنشاء المحتوى والتصميم</h3>
+            <p>إنتاج محتوى مرئي ونصي جذاب يعكس هوية العلامة ويثير اهتمام المتابعين.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٣</div>
+            <h3>إدارة وسائل التواصل الاجتماعي</h3>
+            <p>إدارة حضورك على المنصات الاجتماعية وزيادة التفاعل وبناء مجتمع حول علامتك.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٤</div>
+            <h3>تطوير الحملات الإعلانية</h3>
+            <p>تصميم وتنفيذ حملات مدفوعة وموجهة لجذب العملاء المحتملين وزيادة المبيعات.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٥</div>
+            <h3>التحليل والتحسين</h3>
+            <p>مراقبة الأداء واستخدام البيانات لتعديل الاستراتيجية وتحسين النتائج بشكل مستمر.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <div class="container">
+        <h2>فوائد العمل معنا</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <div class="card-number">١</div>
+            <h3>استهداف قائم على البيانات</h3>
+            <p>نستخدم تحليلات دقيقة لتوجيه رسائلك للجمهور المناسب وزيادة العائد على الاستثمار.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٢</div>
+            <h3>إبداع متميز</h3>
+            <p>فريقنا الإبداعي يصنع محتوى جذاباً يعكس قيم علامتك ويعزز تميزها.</p>
+          </div>
+          <div class="info-card">
+            <div class="card-number">٣</div>
+            <h3>نتائج قابلة للقياس</h3>
+            <p>نحدد مؤشرات الأداء الرئيسية ونقدم تقارير شفافة لنضمن تأثيراً ملموساً لحملاتك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>هل أنت مستعد لتنمية علامتك التجارية؟</h2>
+        <p>دعنا نساعدك على تحقيق أهدافك الرقمية. تواصل معنا اليوم لبدء المحادثة.</p>
+        <a href="contact-ar.html" class="cta-button">تواصل معنا الآن</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>نبذة عنا</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi-ar.html">نبذة عن الشركة</a></li>
+            <li><a href="ojoor-leadership-team-ar.html">فريق القيادة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li><a href="management-consulting-saudi-ar.html">الاستشارات الإدارية</a></li>
+            <li><a href="human-resources-solutions-saudi-ar.html">حلول الموارد البشرية</a></li>
+            <li><a href="digital-transformation-saudi-ar.html">التحول الرقمي</a></li>
+            <li><a href="digital-marketing-saudi-ar.html">التسويق والإعلام الرقمي</a></li>
+            <li><a href="project_management-ar.html">إدارة المشاريع</a></li>
+            <li><a href="legal-solutions-saudi-ar.html">الحلول القانونية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل</h4>
+          <p>البريد الإلكتروني: info@ojoor.sa</p>
+          <p>الهاتف: ‎+966 5 3333 2764</p>
+          <p>العنوان: مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:center; color:#fff;">
+        <p style="color:#fff;">© 2025 أجور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

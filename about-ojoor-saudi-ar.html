@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن – قصة أجور ورؤيتنا</title>
+  <meta name="description" content="تعرف على تاريخ أجور ورؤيتنا وقيمنا وكيف ندعم الشركات في السعودية.">
+  <style>
+    /*
+     * BRAND GUIDELINES
+     * --------------------------
+     * Primary:       #00514d (Dark Green)
+     * Accent:        #1bab75 (Vibrant Green)
+     * Secondary BG:  #f7f7f7 (Light Grey)
+     * Text:          #333333 (Default Dark Text)
+     * Gold:          #d4a448 (Golden Accent)
+     * White:         #ffffff
+     * --------------------------
+    */
+
+    /* --- Page Specific & Optimized CSS --- */
+
+    :root {
+      --primary: #00514d;
+      --secondary-bg: #f7f9fa; /* A slightly cooler grey */
+      --accent: #1bab75;
+      --text: #333333;
+      --white: #ffffff;
+      --gold: #d4a448;
+      --font-base: 'Arial', 'Helvetica', sans-serif;
+    }
+
+    html {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.8; /* Increased for better readability on a light BG */
+      color: var(--text);
+      background-color: var(--white); /* Primary background is now white */
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* --- Typography & Layout Containers --- */
+    h1, h2, h3 {
+      font-weight: bold;
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center; }
+    h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      max-width: 750px; /* Optimal width for reading */
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0; /* Consistent vertical spacing */
+    }
+
+    /* --- Header --- */
+    .main-header {
+      background-color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Subtle shadow for depth */
+      padding: 0.5rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .navbar nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .navbar nav a:hover, .navbar nav a.current-page {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    
+    /* --- Hero Section --- */
+    .hero {
+      padding: 4rem 0;
+      text-align: right;
+    }
+    .hero .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+    .hero-content {
+        flex: 1;
+        min-width: 300px;
+    }
+    .hero-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+    }
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 2rem;
+    }
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--white);
+        padding: 12px 28px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .cta-button:hover {
+        background-color: #179b68; /* Darker accent */
+        transform: translateY(-2px);
+    }
+
+    /* --- Story Section --- */
+    .story-section {
+      background-color: var(--secondary-bg); /* Use light grey to alternate */
+    }
+    .story-section .container {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .story-content { flex: 1; }
+    
+    /* --- Vision & Mission Section --- */
+    .vision-mission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    .vision-card {
+        background-color: var(--white);
+        padding: 2.5rem 2rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .vision-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    }
+    .vision-card .number {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: var(--accent);
+        opacity: 0.3;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+    .vision-card h3 {
+        color: var(--primary);
+        position: relative; /* To appear above number */
+    }
+    .vision-card p {
+        position: relative;
+    }
+
+    /* --- Values Section --- */
+    .values-section {
+        background-color: var(--secondary-bg);
+    }
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    .value-card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid #e0e0e0;
+    }
+    .value-card .icon {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 1rem;
+        filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(110deg) saturate(3); /* Green monochrome effect */
+    }
+    
+    /* --- Final CTA Section --- */
+    .final-cta {
+        background-color: var(--primary);
+        color: var(--white);
+        text-align: center;
+    }
+    .final-cta h2 {
+        color: var(--white);
+    }
+    .final-cta p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+    }
+
+    /* --- Footer --- */
+    .main-footer {
+        background-color: #2c3e50; /* Darker, more neutral color */
+        color: var(--white);
+        padding: 4rem 0 2rem 0;
+        font-size: 0.95rem;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    .footer-col h4 {
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-col ul li {
+        margin-bottom: 0.75rem;
+    }
+    .footer-col a, .footer-col p {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+    }
+    .footer-col a:hover {
+        color: var(--white);
+        text-decoration: underline;
+    }
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        section { padding: 3rem 0; }
+        .navbar nav { display: none; } /* On mobile, nav menu would need a burger icon and JS */
+        .hero .container {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        .hero { text-align: center; }
+        .story-section .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index-ar.html" class="logo">أجور</a>
+        <nav>
+          <a href="index-ar.html">الرئيسية</a>
+          <a href="about-ojoor-saudi-ar.html" class="current-page">من نحن</a>
+          <a href="ojoor-business-services-saudi-ar.html">الخدمات</a>
+          <a href="blog-ar.html">المقالات</a>
+          <a href="contact-ar.html">اتصل بنا</a>
+        </nav>
+        <div>
+          <a href="about-ojoor-saudi.html" style="margin-left:2rem; font-weight:600; color:var(--accent); text-decoration:none;" title="English">English</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>شريككم الاستراتيجي للنمو والنجاح في المملكة</h1>
+                <p class="subtitle">تأسست أجور على يد خبراء متمرسين لتقديم حلول أعمال متكاملة تساعد الشركات على الازدهار والتركيز على أهدافها الأساسية.</p>
+                <a href="#our-story" class="cta-button">اكتشف قصتنا</a>
+            </div>
+            <div class="hero-image">
+                <img src="<a href="https://ibb.co/XhdJQsH"><img src="https://i.ibb.co/xpc5kjZ/Untitled-design-30.png">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2>قصتنا ومسيرتنا</h2>
+          <p>بدأت أجور كشركة استشارية صغيرة في الرياض، مدفوعة بشغف لمساعدة الشركات على التنقل في المشهد التنظيمي السعودي. ومع زيادة الطلب، توسعت خدماتنا لتشمل إدارة الرواتب، التوظيف، والاستشارات القانونية والمحاسبية. اليوم، نفخر بخدمة شركات من مختلف الأحجام في المملكة ودول مجلس التعاون الخليجي، ونواصل رحلتنا في دعم نجاحهم كشركاء موثوقين.</p>
+        </div>
+        <div class="story-image">
+            <img src="<a href="https://ibb.co/237cQnF8"><img src="https://i.ibb.co/YB7fMRND/Untitled-design-31.png">
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission-section">
+      <div class="container">
+        <h2>رؤيتنا ورسالتنا</h2>
+        <div class="vision-mission-grid">
+          <div class="vision-card">
+            <div class="number">١</div>
+            <h3>رؤيتنا</h3>
+            <p>أن نكون الاسم الأول في تقديم الحلول الشاملة للأعمال في السعودية، وأن نكون شريكاً محورياً في نجاح كل مؤسسة تطمح للنمو والتميز.</p>
+          </div>
+          <div class="vision-card">
+            <div class="number">٢</div>
+            <h3>رسالتنا</h3>
+            <p>تمكين الشركات من خلال خدمات مبتكرة واستراتيجية، وتقديم دعم موثوق ومتوافق مع الأنظمة ليتفرغ عملاؤنا لقيادة أعمالهم الأساسية نحو القمة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <h2>قيمنا الجوهرية</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <img src="https://placehold.co/64x64/00514d/ffffff?text=Icon" alt="أيقونة التميز" class="icon">
+            <h3>التميز والابتكار</h3>
+            <p>نلتزم بأعلى معايير الجودة ونسعى باستمرار لإيجاد طرق مبتكرة لمواجهة التحديات.</p>
+          </div>
+          <div class="value-card">
+            <img src="https://placehold.co/64x64/00514d/ffffff?text=Icon" alt="أيقونة النزاهة" class="icon">
+            <h3>النزاهة والمسؤولية</h3>
+            <p>نعمل بشفافية وأمانة مطلقة ونتحمل المسؤولية الكاملة عن التزاماتنا ونتائجنا.</p>
+          </div>
+          <div class="value-card">
+            <img src="https://placehold.co/64x64/00514d/ffffff?text=Icon" alt="أيقونة الشراكة" class="icon">
+            <h3>الشراكة</h3>
+            <p>نبني علاقات طويلة الأمد مع عملائنا على أساس من الثقة المتبادلة والأهداف المشتركة.</p>
+          </div>
+          <div class="value-card">
+            <img src="https://placehold.co/64x64/00514d/ffffff?text=Icon" alt="أيقونة التمكين" class="icon">
+            <h3>التمكين</h3>
+            <p>نركز على تمكين المؤسسات من تحسين أدائها وتعزيز إنتاجيتها لتحقيق النجاح المستدام.</p>
+          </div>
+          <div class="value-card">
+            <img src="https://placehold.co/64x64/00514d/ffffff?text=Icon" alt="أيقونة الأثر" class="icon">
+            <h3>الاستدامة والأثر</h3>
+            <p>نقدم حلولاً مصممة لإحداث أثر إيجابي وواضح يساهم في تحقيق أهداف عملائنا والوطن.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>تعرف على الخبرات التي تقود نجاحنا</h2>
+            <p>فريقنا هو أعظم أصولنا. اكتشف القادة الذين يوجهون رؤيتنا ويضمنون تقديم أفضل خدمة لعملائنا.</p>
+            <a href="ojoor-leadership-team-ar.html" class="cta-button">اكتشف فريق القيادة</a>
+        </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>نبذة عنا</h4>
+          <ul>
+            <li><a href="about-ojoor-saudi-ar.html">نبذة عن الشركة</a></li>
+            <li><a href="ojoor-leadership-team-ar.html">فريق القيادة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li><a href="management-consulting-saudi-ar.html">تأسيس الشركات</a></li>
+            <li><a href="human-resources-solutions-saudi-ar.html">إدارة الإقامة والرواتب</a></li>
+            <li><a href="digital-transformation-saudi-ar.html">التوظيف</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل</h4>
+          <p>البريد: info@ojoor.sa</p>
+          <p>الهاتف: ‎+966 5 3333 2764</p>
+          <p>العنوان: مبنى S4، واجهة روشن للأعمال، طريق المطار، الرياض</p>
+        </div>
+      </div>
+      <div class="footer-bottom" style="text-align:center; color:#fff;">
+        <p style="color:#fff;">© 2025 أجور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
